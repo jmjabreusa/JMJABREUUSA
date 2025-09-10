@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JMJ Abreu Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-wrap"><img src="assets/logo.svg" alt="JMJ Abreu Solutions logo"></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner container">
+      <h1 class="hero-title">JMJ Abreu<br/><span>Solutions</span></h1>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="intro">
+      <p class="lead" data-pt="Serviços profissionais em Orlando, FL — pintura, instalação de baseboards, portas, pisos vinílicos, janelas, trocas de torneiras, luminárias, ventiladores e reparos em drywall."
+         data-en="Professional services in Orlando, FL — painting, baseboards, doors, vinyl floors, windows, faucet & light fixture swaps, ceiling fans and drywall repairs.">
+        Serviços profissionais em Orlando, FL — pintura, instalação de baseboards, portas, pisos vinílicos, janelas, trocas de torneiras, luminárias, ventiladores e reparos em drywall.
+      </p>
+      <div class="lang-toggle">
+        <button id="ptBtn" class="active">PT</button>
+        <button id="enBtn">EN</button>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <h2>Our Gallery</h2>
+      <div class="grid">
+
+        <figure class="card">
+          <div class="badge">BEFORE</div>
+          <img src="assets/proj1.jpeg" alt="Project 1">
+        </figure>
+    
+        <figure class="card">
+          <div class="badge">AFTER</div>
+          <img src="assets/proj2.jpeg" alt="Project 2">
+        </figure>
+    
+        <figure class="card">
+          <div class="badge">BEFORE</div>
+          <img src="assets/proj1.jpeg" alt="Project 3">
+        </figure>
+    
+        <figure class="card">
+          <div class="badge">AFTER</div>
+          <img src="assets/proj2.jpeg" alt="Project 4">
+        </figure>
+    
+        <figure class="card">
+          <div class="badge">BEFORE</div>
+          <img src="assets/proj1.jpeg" alt="Project 5">
+        </figure>
+    
+        <figure class="card">
+          <div class="badge">AFTER</div>
+          <img src="assets/proj2.jpeg" alt="Project 6">
+        </figure>
+    
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h3 data-pt="Contato" data-en="Contact">Contato</h3>
+      <p data-pt="Ligue ou envie mensagem: (407) 558-4647 — Atendimento em Português e Inglês."
+         data-en="Call or message: (407) 558-4647 — Service in Portuguese & English.">
+        Ligue ou envie mensagem: (407) 558-4647 — Atendimento em Português e Inglês.
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <p>© JMJ Abreu Solutions — Orlando, FL</p>
+    </footer>
+  </main>
+
+<script>
+document.getElementById('ptBtn').addEventListener('click', function(){
+  document.documentElement.lang='pt';
+  this.classList.add('active'); document.getElementById('enBtn').classList.remove('active');
+  document.querySelectorAll('[data-pt]').forEach(el=> el.textContent = el.getAttribute('data-pt'));
+});
+document.getElementById('enBtn').addEventListener('click', function(){
+  document.documentElement.lang='en';
+  this.classList.add('active'); document.getElementById('ptBtn').classList.remove('active');
+  document.querySelectorAll('[data-en]').forEach(el=> el.textContent = el.getAttribute('data-en'));
+});
+</script>
+</body>
+</html>
