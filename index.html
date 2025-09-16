@@ -6,26 +6,30 @@
   <title>JMJ Abreu Solutions</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
       background-color: #ffffff;
       color: #003366;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     /* ================= HEADER ================= */
     header {
-      background: linear-gradient(135deg, #003366, #00509e, #ffcc00);
+      background: linear-gradient(-45deg, #003366, #00509e, #0074d9, #ffcc00);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
       color: white;
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
       position: relative;
     }
 
-    header .header-content {
-      max-width: 900px;
-      margin: auto;
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header h1 {
@@ -34,7 +38,6 @@
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #ffffff;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     }
 
@@ -42,12 +45,31 @@
       font-size: 1.4rem;
       margin-top: 20px;
       display: inline-block;
-      background: rgba(255,255,255,0.1);
-      padding: 10px 20px;
+      background: rgba(255,255,255,0.15);
+      padding: 10px 25px;
       border-radius: 8px;
       color: #ffcc00;
       font-weight: 500;
       letter-spacing: 1px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .social-links {
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.6rem;
+      color: white;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ffcc00;
+      transform: scale(1.2);
     }
 
     /* ================= NAV ================= */
@@ -57,7 +79,11 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
@@ -65,18 +91,38 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
       text-decoration: underline;
       color: #ffcc00;
+      transform: scale(1.1);
     }
 
     /* ================= SECTIONS ================= */
     section {
-      padding: 30px;
-      max-width: 1000px;
+      padding: 50px 20px;
+      max-width: 1100px;
       margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #003366;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #00509e;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
     .services, .before-after {
@@ -88,15 +134,26 @@
     .services div, .before-after div {
       flex: 1 1 45%;
       background-color: #f0f8ff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
       text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .services div:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
     }
 
     .before-after img {
       max-width: 100%;
       border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+
+    .before-after img:hover {
+      transform: scale(1.05);
     }
 
     .before-after h4 {
@@ -109,8 +166,14 @@
       background-color: #003366;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 30px;
+      font-size: 0.95rem;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+    }
+
+    footer .social-links {
+      margin-top: 10px;
     }
 
     /* ================= FORMS ================= */
@@ -120,46 +183,78 @@
     }
 
     form input, form textarea {
-      padding: 10px;
-      margin-bottom: 15px;
+      padding: 12px;
+      margin-bottom: 18px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 1rem;
+      transition: all 0.3s ease;
     }
 
     form input:focus, form textarea:focus {
       border-color: #00509e;
       outline: none;
-      box-shadow: 0 0 5px rgba(0,80,158,0.3);
+      box-shadow: 0 0 8px rgba(0,80,158,0.4);
+      transform: scale(1.02);
     }
 
     form button {
       background-color: #00509e;
       color: white;
       border: none;
-      padding: 12px;
-      border-radius: 5px;
+      padding: 14px;
+      border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
+      transition: all 0.3s ease;
     }
 
     form button:hover {
       background-color: #003366;
+      transform: scale(1.05);
     }
 
     /* ================= REVIEWS ================= */
     .review {
       background: #f9f9f9;
-      border-left: 5px solid #00509e;
-      padding: 15px;
+      border-left: 6px solid #00509e;
+      padding: 18px;
       margin-bottom: 20px;
       border-radius: 6px;
+      font-style: italic;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .review:hover {
+      transform: translateX(5px);
+    }
+
+    /* ================= FLOATING BUTTON ================= */
+    .floating-instagram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 2000;
+    }
+
+    .floating-instagram:hover {
+      transform: scale(1.15);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.5);
     }
 
     /* ================= RESPONSIVE ================= */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       header .tagline {
         font-size: 1rem;
@@ -178,6 +273,9 @@
     <div class="header-content">
       <h1>JMJ Abreu Solutions</h1>
       <p class="tagline">Interior & Exterior Painting | Handyman Services</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷 Instagram</a>
+      </div>
     </div>
   </header>
 
@@ -219,7 +317,6 @@
   <section id="before-after">
     <h2>Before & After</h2>
     <div class="before-after">
-      <!-- Projeto 1 -->
       <div>
         <h4>Before</h4>
         <img src="assets/projeto1-before.jpg" alt="Antes da pintura - Projeto 1" />
@@ -228,8 +325,6 @@
         <h4>After</h4>
         <img src="assets/projeto1-after.jpg" alt="Depois da pintura - Projeto 1" />
       </div>
-
-      <!-- Projeto 2 -->
       <div>
         <h4>Before</h4>
         <img src="assets/projeto2-before.jpg" alt="Antes da reforma - Projeto 2" />
@@ -251,13 +346,10 @@
   <!-- REVIEWS -->
   <section id="reviews">
     <h2>Customer Reviews</h2>
-
-    <!-- Exemplo de review fixo -->
     <div class="review">
       <p>"JMJ Abreu did an amazing job on our home. Highly recommend!"</p>
       <strong>- Maria G.</strong>
     </div>
-
     <h2>Leave a Review</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -269,7 +361,13 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2025 JMJ Abreu Solutions. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷 Instagram</a>
+    </div>
   </footer>
+
+  <!-- FLOATING INSTAGRAM BUTTON -->
+  <a class="floating-instagram" href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷</a>
 
 </body>
 </html>
