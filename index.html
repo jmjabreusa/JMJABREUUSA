@@ -13,33 +13,44 @@
       padding: 0;
     }
 
+    /* ================= HEADER ================= */
     header {
-      background-color: #003366;
+      background: linear-gradient(135deg, #003366, #00509e, #ffcc00);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    header .header-content {
+      max-width: 900px;
+      margin: auto;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       margin: 0;
       font-weight: bold;
       letter-spacing: 2px;
       text-transform: uppercase;
-
-      /* Gradiente no texto */
-      background: linear-gradient(90deg, #ffcc00, #ffffff, #ffcc00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
     }
 
-    header p {
-      font-size: 1.3rem;
-      font-weight: 300;
-      margin-top: 10px;
+    header .tagline {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
       color: #ffcc00;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
 
+    /* ================= NAV ================= */
     nav {
       background-color: #00509e;
       color: white;
@@ -54,7 +65,6 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
     }
 
     nav a:hover {
@@ -62,6 +72,7 @@
       color: #ffcc00;
     }
 
+    /* ================= SECTIONS ================= */
     section {
       padding: 30px;
       max-width: 1000px;
@@ -80,6 +91,7 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     .before-after img {
@@ -87,6 +99,12 @@
       border-radius: 8px;
     }
 
+    .before-after h4 {
+      margin-bottom: 10px;
+      color: #00509e;
+    }
+
+    /* ================= FOOTER ================= */
     footer {
       background-color: #003366;
       color: white;
@@ -95,6 +113,7 @@
       margin-top: 30px;
     }
 
+    /* ================= FORMS ================= */
     form {
       display: flex;
       flex-direction: column;
@@ -128,6 +147,7 @@
       background-color: #003366;
     }
 
+    /* ================= REVIEWS ================= */
     .review {
       background: #f9f9f9;
       border-left: 5px solid #00509e;
@@ -136,28 +156,32 @@
       border-radius: 6px;
     }
 
+    /* ================= RESPONSIVE ================= */
     @media (max-width: 768px) {
-      .services div, .before-after div {
-        flex: 1 1 100%;
-      }
-
       header h1 {
         font-size: 2rem;
       }
-
-      header p {
+      header .tagline {
         font-size: 1rem;
+        padding: 8px 15px;
+      }
+      .services div, .before-after div {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <h1>JMJ Abreu Solutions</h1>
-    <p>Interior & Exterior Painting | Handyman Services</p>
+    <div class="header-content">
+      <h1>JMJ Abreu Solutions</h1>
+      <p class="tagline">Interior & Exterior Painting | Handyman Services</p>
+    </div>
   </header>
 
+  <!-- NAVIGATION -->
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
@@ -166,11 +190,13 @@
     <a href="#reviews">Reviews</a>
   </nav>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Us</h2>
     <p>At JMJ Abreu Solutions, we specialize in interior and exterior painting and reliable handyman services. With years of experience and attention to detail, we make sure every project is completed with professionalism and customer satisfaction in mind.</p>
   </section>
 
+  <!-- SERVICES -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services">
@@ -189,6 +215,7 @@
     </div>
   </section>
 
+  <!-- BEFORE & AFTER -->
   <section id="before-after">
     <h2>Before & After</h2>
     <div class="before-after">
@@ -214,12 +241,14 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>📞 Phone: <strong>407-558-4647</strong></p>
     <p>📧 Email: <strong>jmjabreusa@gmail.com</strong></p>
   </section>
 
+  <!-- REVIEWS -->
   <section id="reviews">
     <h2>Customer Reviews</h2>
 
@@ -237,6 +266,7 @@
     </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 JMJ Abreu Solutions. All rights reserved.</p>
   </footer>
