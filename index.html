@@ -16,13 +16,23 @@
     header {
       background-color: #003366;
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    header img {
-      height: 80px;
-      vertical-align: middle;
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-top: 10px;
+      color: #ffcc00;
     }
 
     nav {
@@ -39,6 +49,7 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.1rem;
     }
 
     nav a:hover {
@@ -92,6 +103,12 @@
       font-size: 1rem;
     }
 
+    form input:focus, form textarea:focus {
+      border-color: #00509e;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0,80,158,0.3);
+    }
+
     form button {
       background-color: #00509e;
       color: white;
@@ -118,13 +135,21 @@
       .services div, .before-after div {
         flex: 1 1 100%;
       }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-     <h1>JMJ Abreu Solutions</h1>
+    <h1>JMJ Abreu Solutions</h1>
     <p>Interior & Exterior Painting | Handyman Services</p>
   </header>
 
