@@ -1,98 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JMJ Abreu Solutions — Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JMJ Abreu Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    nav {
+      background-color: #00509e;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .services, .before-after {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .services div, .before-after div {
+      flex: 1 1 45%;
+      background-color: #f0f8ff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .before-after img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: #00509e;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #003366;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <img src="assets/logo.jpg" alt="JMJ Abreu Solutions logo" class="logo">
-      <div class="brand-text">
-        <h1>JMJ Abreu Solutions</h1>
-        <p>Interior & Exterior Painting • Handyman Services</p>
-      </div>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+  <header>
+    <img src="logo.png" alt="JMJ Abreu Solutions Logo" />
+    <h1>JMJ Abreu Solutions</h1>
+    <p>Interior & Exterior Painting | Handyman Services</p>
   </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <h2>Professional painting & handyman services in Orlando, FL</h2>
-        <p>We offer interior & exterior painting, baseboard and vinyl flooring installation, drywall repair, plumbing & electrical fixtures, and more. Licensed, insured, and ready to transform your space.</p>
-        <a class="cta" href="#contact">Get a Free Estimate</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#before-after">Before & After</a>
+    <a href="#contact">Contact</a>
+    <a href="#reviews">Reviews</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At JMJ Abreu Solutions, we specialize in interior and exterior painting and reliable handyman services. With years of experience and attention to detail, we make sure every project is completed with professionalism and customer satisfaction in mind.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div>
+        <h3>Interior Painting</h3>
+        <p>We bring life to your indoor spaces with high-quality paints and flawless finishes.</p>
       </div>
-      <div class="hero-image">
-        <img src="assets/hero-placeholder.jpg" alt="Before and after sample (placeholder)">
+      <div>
+        <h3>Exterior Painting</h3>
+        <p>Protect and enhance your property’s curb appeal with our durable exterior painting services.</p>
       </div>
-    </section>
-
-    <section id="gallery" class="panel">
-      <h2>Gallery — Before & After</h2>
-      <p>Upload paired images (Before & After). You can upload multiple pairs. Images are stored locally in your browser and will persist on this device.</p>
-      <div class="uploader">
-        <div class="pair-input">
-          <label>Before image: <input type="file" id="beforeInput" accept="image/*"></label>
-          <label>After image: <input type="file" id="afterInput" accept="image/*"></label>
-          <button id="addPairBtn">Add Pair</button>
-        </div>
+      <div>
+        <h3>Handyman Services</h3>
+        <p>From small repairs to general maintenance, count on us for reliable and affordable solutions.</p>
       </div>
-      <div id="galleryGrid" class="gallery-grid" aria-live="polite"></div>
-      <p class="note">Tip: For production hosting, upload files to your server or a CDN. This demo stores images in browser memory (IndexedDB/localStorage).</p>
-    </section>
+    </div>
+  </section>
 
-    <section id="reviews" class="panel">
-      <h2>Customer Reviews</h2>
-      <p>Leave your feedback below — it will be saved locally and shown on this page. You can also export reviews as CSV.</p>
-      <form id="reviewForm" class="review-form">
-        <label>Name: <input type="text" id="reviewerName" required></label>
-        <label>Service provided: <input type="text" id="serviceProvided" placeholder="e.g., Interior painting"></label>
-        <label>Rating:
-          <select id="rating">
-            <option value="5">5 — Excellent</option>
-            <option value="4">4 — Very good</option>
-            <option value="3">3 — Good</option>
-            <option value="2">2 — Fair</option>
-            <option value="1">1 — Poor</option>
-          </select>
-        </label>
-        <label>Feedback: <textarea id="feedbackText" rows="4" required></textarea></label>
-        <div class="form-actions">
-          <button type="submit" class="btn">Submit Feedback</button>
-          <button type="button" id="exportCsv" class="btn alt">Export CSV</button>
-        </div>
-      </form>
-      <div id="reviewsList" class="reviews-list"></div>
-    </section>
+  <section id="before-after">
+    <h2>Before & After</h2>
+    <div class="before-after">
+      <div>
+        <h4>Before</h4>
+        <img src="before1.jpg" alt="Before Work" />
+      </div>
+      <div>
+        <h4>After</h4>
+        <img src="after1.jpg" alt="After Work" />
+      </div>
+      <!-- Add more image pairs as needed -->
+    </div>
+  </section>
 
-    <section id="contact" class="panel">
-      <h2>Contact</h2>
-      <p>Phone: <strong>(407) 558-4647</strong></p>
-      <p>Email: <strong>info@jmjabreusolutions.com</strong></p>
-      <p>Or send a quick message below (this demo uses a mailto link and stores a copy locally):</p>
-      <form id="contactForm" class="contact-form">
-        <label>Your name: <input type="text" id="contactName" required></label>
-        <label>Your email: <input type="email" id="contactEmail" required></label>
-        <label>Message: <textarea id="contactMessage" rows="4" required></textarea></label>
-        <div class="form-actions">
-          <button type="submit" class="btn">Send Message</button>
-        </div>
-      </form>
-    </section>
-  </main>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <strong>407-558-4647</strong></p>
+    <p>📧 Email: <strong>jmjabreusa@gmail.com</strong></p>
+  </section>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> JMJ Abreu Solutions — Orlando, FL</p>
+  <section id="reviews">
+    <h2>Leave a Review</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <textarea rows="5" placeholder="Your Review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 JMJ Abreu Solutions. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
