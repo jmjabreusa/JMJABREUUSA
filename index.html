@@ -21,7 +21,7 @@
     }
 
     header img {
-      height: 60px;
+      height: 80px;
       vertical-align: middle;
     }
 
@@ -30,6 +30,7 @@
       color: white;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       padding: 10px;
     }
 
@@ -37,6 +38,12 @@
       color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
     }
 
     section {
@@ -56,6 +63,7 @@
       background-color: #f0f8ff;
       padding: 20px;
       border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
     }
 
     .before-after img {
@@ -81,27 +89,42 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1rem;
     }
 
     form button {
       background-color: #00509e;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 12px;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 1rem;
     }
 
     form button:hover {
       background-color: #003366;
+    }
+
+    .review {
+      background: #f9f9f9;
+      border-left: 5px solid #00509e;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .services div, .before-after div {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="A4C04843-EED4-4A71-A233-FFC5D68B2FCF.PNG" alt="JMJ Abreu Solutions Logo" />
-
+    <img src="imagens/logo.png" alt="JMJ Abreu Solutions Logo" />
     <h1>JMJ Abreu Solutions</h1>
     <p>Interior & Exterior Painting | Handyman Services</p>
   </header>
@@ -140,15 +163,25 @@
   <section id="before-after">
     <h2>Before & After</h2>
     <div class="before-after">
+      <!-- Projeto 1 -->
       <div>
         <h4>Before</h4>
-        <img src=“Project 1.jpeg alt="Before Work" />
+        <img src="imagens/projeto1-before.jpg" alt="Antes da pintura - Projeto 1" />
       </div>
       <div>
         <h4>After</h4>
-        <img src=“Project 2.jpeg alt="After Work" />
+        <img src="imagens/projeto1-after.jpg" alt="Depois da pintura - Projeto 1" />
       </div>
-      <!-- Add more image pairs as needed -->
+
+      <!-- Projeto 2 -->
+      <div>
+        <h4>Before</h4>
+        <img src="imagens/projeto2-before.jpg" alt="Antes da reforma - Projeto 2" />
+      </div>
+      <div>
+        <h4>After</h4>
+        <img src="imagens/projeto2-after.jpg" alt="Depois da reforma - Projeto 2" />
+      </div>
     </div>
   </section>
 
@@ -159,6 +192,14 @@
   </section>
 
   <section id="reviews">
+    <h2>Customer Reviews</h2>
+
+    <!-- Exemplo de review fixo -->
+    <div class="review">
+      <p>"JMJ Abreu did an amazing job on our home. Highly recommend!"</p>
+      <strong>- Maria G.</strong>
+    </div>
+
     <h2>Leave a Review</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
