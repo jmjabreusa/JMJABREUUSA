@@ -1,91 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMJ Abreu Solutions – Painting Services</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JMJ Abreu Solutions</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #ffffff;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
+    /* ================= HEADER ================= */
+    header {
+      background: linear-gradient(-45deg, #003366, #00509e, #0074d9, #ffcc00);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    header .tagline {
+      font-size: 1.4rem;
+      margin-top: 20px;
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 10px 25px;
+      border-radius: 8px;
+      color: #ffcc00;
+      font-weight: 500;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .social-links {
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.6rem;
+      color: white;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ffcc00;
+      transform: scale(1.2);
+    }
+
+    /* ================= NAV ================= */
+    nav {
+      background-color: #00509e;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #003366;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #00509e;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .services, .before-after {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .services div, .before-after div {
+      flex: 1 1 45%;
+      background-color: #f0f8ff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .services div:hover {
+      transform: translateY(-8px);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.25);
+    }
+
+    .before-after img {
+      max-width: 100%;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+
+    .before-after img:hover {
+      transform: scale(1.05);
+    }
+
+    .before-after h4 {
+      margin-bottom: 10px;
+      color: #00509e;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 30px;
+      font-size: 0.95rem;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+    }
+
+    footer .social-links {
+      margin-top: 10px;
+    }
+
+    /* ================= FORMS ================= */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input, form textarea {
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #00509e;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0,80,158,0.4);
+      transform: scale(1.02);
+    }
+
+    form button {
+      background-color: #00509e;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #003366;
+      transform: scale(1.05);
+    }
+
+    /* ================= REVIEWS ================= */
+    .review {
+      background: #f9f9f9;
+      border-left: 6px solid #00509e;
+      padding: 18px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      font-style: italic;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .review:hover {
+      transform: translateX(5px);
+    }
+
+    /* ================= FLOATING BUTTON ================= */
+    .floating-instagram {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      text-decoration: none;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 2000;
+    }
+
+    .floating-instagram:hover {
+      transform: scale(1.15);
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.5);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header .tagline {
+        font-size: 1rem;
+        padding: 8px 15px;
+      }
+      .services div, .before-after div {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
 <body>
 
-<!-- HERO SECTION -->
-<header class="hero">
-    <div class="hero-text">
-        <h1>Transforming Spaces with Flawless Finishes</h1>
-        <p>Professional interior & exterior painting in Winter Garden, FL.</p>
-        <a href="#contact" class="btn">Get a Free Quote</a>
+  <!-- HEADER -->
+  <header>
+    <div class="header-content">
+      <h1>JMJ Abreu Solutions</h1>
+      <p class="tagline">Interior & Exterior Painting | Handyman Services</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷 Instagram</a>
+      </div>
     </div>
-</header>
+  </header>
 
-<!-- ABOUT -->
-<section class="about">
-    <h2>About JMJ Abreu Solutions</h2>
-    <p>We deliver high-quality interior and exterior painting with precision, clean preparation, and long-lasting results. Serving Winter Garden and Central Florida with professional and reliable workmanship.</p>
-</section>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#before-after">Before & After</a>
+    <a href="#contact">Contact</a>
+    <a href="#reviews">Reviews</a>
+  </nav>
 
-<!-- SERVICES -->
-<section class="services">
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At JMJ Abreu Solutions, we specialize in interior and exterior painting and reliable handyman services. With years of experience and attention to detail, we make sure every project is completed with professionalism and customer satisfaction in mind.</p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
     <h2>Our Services</h2>
-
-    <div class="service-grid">
-        <div class="service-card">
-            <h3>Interior Painting</h3>
-            <p>Walls, ceilings, trims, doors, preparation and finishing.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Exterior Painting</h3>
-            <p>Weather-resistant coatings, preparation and sealing.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Drywall Repair</h3>
-            <p>Holes, cracks, textures and surface restoration.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Baseboards & Doors</h3>
-            <p>Installation, replacement and professional finishing.</p>
-        </div>
-
-        <div class="service-card">
-            <h3>Vinyl Flooring</h3>
-            <p>LVP installation with precise cuts and clean layout.</p>
-        </div>
+    <div class="services">
+      <div>
+        <h3>Interior Painting</h3>
+        <p>We bring life to your indoor spaces with high-quality paints and flawless finishes.</p>
+      </div>
+      <div>
+        <h3>Exterior Painting</h3>
+        <p>Protect and enhance your property’s curb appeal with our durable exterior painting services.</p>
+      </div>
+      <div>
+        <h3>Handyman Services</h3>
+        <p>From small repairs to general maintenance, count on us for reliable and affordable solutions.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- BEFORE & AFTER PREVIEW -->
-<section class="before-after-preview">
+  <!-- BEFORE & AFTER -->
+  <section id="before-after">
     <h2>Before & After</h2>
-    <p>Real transformations from our latest projects.</p>
-    <a href="before-after.html" class="btn">View Full Gallery</a>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-    <h2>Get Your Free Estimate</h2>
-    <p>Fast response through phone, email, or form.</p>
-
-    <div class="contact-info">
-        <p>📞 407-558-4647</p>
-        <p>📧 jmjabreusa@gmail.com</p>
+    <div class="before-after">
+      <div>
+        <h4>Before</h4>
+        <img src="assets/projeto1-before.jpg" alt="Antes da pintura - Projeto 1" />
+      </div>
+      <div>
+        <h4>After</h4>
+        <img src="assets/projeto1-after.jpg" alt="Depois da pintura - Projeto 1" />
+      </div>
+      <div>
+        <h4>Before</h4>
+        <img src="assets/projeto2-before.jpg" alt="Antes da reforma - Projeto 2" />
+      </div>
+      <div>
+        <h4>After</h4>
+        <img src="assets/projeto2-after.jpg" alt="Depois da reforma - Projeto 2" />
+      </div>
     </div>
+  </section>
 
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <strong>407-558-4647</strong></p>
+    <p>📧 Email: <strong>jmjabreusa@gmail.com</strong></p>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="review">
+      <p>"JMJ Abreu did an amazing job on our home. Highly recommend!"</p>
+      <strong>- Maria G.</strong>
+    </div>
+    <h2>Leave a Review</h2>
     <form>
-        <input type="text" placeholder="Name" required>
-        <input type="text" placeholder="Phone" required>
-        <input type="text" placeholder="Address" required>
-        <textarea placeholder="Type of service"></textarea>
-        <button class="btn">Send Request</button>
+      <input type="text" placeholder="Your Name" required />
+      <textarea rows="5" placeholder="Your Review..." required></textarea>
+      <button type="submit">Submit Review</button>
     </form>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>JMJ Abreu Solutions – Winter Garden, FL</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 JMJ Abreu Solutions. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷 Instagram</a>
+    </div>
+  </footer>
+
+  <!-- FLOATING INSTAGRAM BUTTON -->
+  <a class="floating-instagram" href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank">📷</a>
 
 </body>
 </html>
