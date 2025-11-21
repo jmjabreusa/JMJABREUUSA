@@ -21,190 +21,27 @@
       --dark: #002244;
       --light: #f5f7fa;
     }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--light);
-      color: var(--dark);
-    }
-
-    /* Modern Header */
-    header {
-      background: linear-gradient(135deg, var(--dark), var(--primary));
-      padding: 100px 20px;
-      text-align: center;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/cubes.png');
-      opacity: 0.15;
-    }
-
-    header h1 {
-      font-size: 3.8rem;
-      margin: 0;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    header .tagline {
-      font-size: 1.4rem;
-      margin-top: 20px;
-      display: inline-block;
-      padding: 12px 25px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      backdrop-filter: blur(4px);
-    }
-
-    nav {
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 25px;
-      position: relative;
-    }
-
-    h2::after {
-      content: "";
-      width: 90px;
-      height: 4px;
-      background: var(--primary);
-      display: block;
-      margin: 12px auto 0;
-      border-radius: 3px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .before-after {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .before-after img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
-
-    .before-after img:hover {
-      transform: scale(1.04);
-    }
-
-    .review {
-      background: white;
-      padding: 20px;
-      margin-bottom: 18px;
-      border-left: 6px solid var(--primary);
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-style: italic;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-
-    form button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      transition: 0.3s;
-    }
-
-    form button:hover {
-      background: var(--dark);
-    }
-
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 35px;
-      margin-top: 50px;
-    }
-
-    .carousel { overflow:hidden; position:relative; }
-    .carousel-track { display:flex; animation:slide 28s infinite linear; }
-    .slide { min-width:100%; text-align:center; padding:10px; }
-    .slide img { width:100%; max-width:700px; border-radius:14px; }
-    @keyframes slide { 0%{transform:translateX(0);} 100%{transform:translateX(-100%);} }
-
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: var(--light); color: var(--dark); }
+    header { background: linear-gradient(135deg, var(--dark), var(--primary)); padding: 100px 20px; text-align: center; color: white; position: relative; overflow: hidden; }
+    header::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.15; }
+    header h1 { font-size: 3.8rem; margin: 0; font-weight: 800; letter-spacing: 2px; }
+    header .tagline { font-size: 1.4rem; margin-top: 20px; display: inline-block; padding: 12px 25px; background: rgba(255, 255, 255, 0.15); border-radius: 10px; backdrop-filter: blur(4px); }
+    nav { background: white; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: center; gap: 25px; padding: 15px 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    nav a { text-decoration: none; color: var(--dark); font-weight: 600; padding: 8px 14px; border-radius: 6px; transition: 0.3s; }
+    nav a:hover { background: var(--primary); color: white; }
+    section { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+    h2 { text-align: center; font-size: 2.4rem; margin-bottom: 25px; position: relative; }
+    h2::after { content: ""; width: 90px; height: 4px; background: var(--primary); display: block; margin: 12px auto 0; border-radius: 3px; }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: white; padding: 25px; border-radius: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+    .before-after { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .before-after img { width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.3s; }
+    .before-after img:hover { transform: scale(1.04); }
     .dark-mode { background:#111; color:#eee; }
     .dark-mode nav { background:#222; }
     .dark-mode .card { background:#222; color:#eee; }
-    .dark-mode footer { background:#000; }
+    footer { background: var(--dark); color: white; text-align: center; padding: 35px; margin-top: 50px; }
   </style>
 </head>
 
@@ -230,7 +67,7 @@
 
 <section id="about">
   <h2>About Us</h2>
-  <p style="text-align:center; max-width:700px; margin:auto; font-size:1.1rem;">We specialize in high-quality interior & exterior painting and dependable handyman services. Our goal is to deliver clean finishes, precision workmanship, and customer satisfaction.</p>
+  <p style="text-align:center; max-width:700px; margin:auto; font-size:1.1rem;">We specialize in high-quality interior & exterior painting and dependable handyman services.</p>
 </section>
 
 <section id="services">
@@ -248,14 +85,6 @@
     <div class="carousel-track">
       <div class="slide"><h4>Before</h4><img src="assets/projeto1-before.jpg" /></div>
       <div class="slide"><h4>After</h4><img src="assets/projeto1-after.jpg" /></div>
-      <div class="slide"><h4>Before</h4><img src="assets/projeto2-before.jpg" /></div>
-      <div class="slide"><h4>After</h4><img src="assets/projeto2-after.jpg" /></div>
-      <div class="slide"><h4>Before</h4><img src="assets/projeto3-before.jpg" /></div>
-      <div class="slide"><h4>After</h4><img src="assets/projeto3-after.jpg" /></div>
-      <div class="slide"><h4>Before</h4><img src="assets/projeto4-before.jpg" /></div>
-      <div class="slide"><h4>After</h4><img src="assets/projeto4-after.jpg" /></div>
-      <div class="slide"><h4>Before</h4><img src="assets/projeto5-before.jpg" /></div>
-      <div class="slide"><h4>After</h4><img src="assets/projeto5-after.jpg" /></div>
     </div>
   </div>
 </section>
@@ -288,39 +117,6 @@
 <script>
   const btn=document.getElementById('toggleDark');
   btn.onclick=()=>{ document.body.classList.toggle('dark-mode'); };
-</script>
-
-<a class="floating-instagram" href="https://www.instagram.com/jmj.usa/?igsh=aXRiMXk3ZzVqOWti&utm_source=qr" target="_blank" style="position:fixed; bottom:25px; right:25px; background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); color:white; padding:16px; border-radius:50%; font-size:1.8rem; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:2000;">📷</a>
-
-<div class="google-guaranteed" style="text-align:center; margin:40px 0;">
-  <img src="assets/google-guaranteed.png" alt="Google Guaranteed" style="width:160px;">
-</div>
-
-<script>
-  const form = document.querySelector('#contact form');
-  const message = document.getElementById('form-message');
-
-  form.addEventListener('submit', function(event) {
-    const inputs = form.querySelectorAll('input, textarea');
-    let valid = true;
-
-    inputs.forEach(input => {
-      if (!input.value.trim()) {
-        input.style.border = '2px solid red';
-        valid = false;
-      } else {
-        input.style.border = '1px solid #ccc';
-      }
-    });
-
-    if (!valid) {
-      event.preventDefault();
-      alert('Please fill in all fields before submitting.');
-      return;
-    }
-
-    message.style.display = 'block';
-  });
 </script>
 
 </body>
