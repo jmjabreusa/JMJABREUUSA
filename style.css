@@ -1,0 +1,216 @@
+/* JMJ Abreu Solutions - Modern Premium + Corporate + Polished Style */
+
+:root {
+  --primary: #00509e;
+  --secondary: #ffcc00;
+  --dark: #002244;
+  --light: #f5f7fa;
+  --white: #ffffff;
+  --gray: #f0f2f5;
+  --radius: 14px;
+  --shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* HEADER */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+  font-weight: 900;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 12px;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: var(--dark);
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+  gap: 22px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* SECTIONS */
+.section {
+  padding: 70px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: var(--primary);
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 4px;
+}
+
+/* SERVICES GRID */
+.services-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--white);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* GALLERY */
+.gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* CONTACT FORM */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.form input,
+.form textarea {
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form button {
+  margin-top: 10px;
+  background: var(--primary);
+  color: var(--white);
+  padding: 14px;
+  border-radius: var(--radius);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: var(--dark);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 25px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .subtitle { font-size: 1.1rem; }
+  .navbar { flex-wrap: wrap; }
+}
